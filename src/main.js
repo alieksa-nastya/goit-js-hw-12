@@ -2,16 +2,22 @@ import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 import {getImage} from './js/pixabay-api'
 
-document.querySelector('.input-list').addEventListener('submit', event => {
-    const input = document.querySelector('.input').value.trim();
-    const box = document.querySelector('.gallery');
+const form = document.querySelector('.input-list');
+const loadMoreBtn = document.querySelector('.load-more');
+const inputField = document.querySelector(".input");
+
+let currentQuery = '';
+let currentPage = 1;
+
+form.addEventListener('submit', async(event) => {
     event.preventDefault();
 
-    if(!input) {
+    currentQuery = inputField.value.trim();
+    if(!currentQuery) {
         iziToast.show({
             messageColor: "#fafafb",
             messageSize: '16px',
-            backgroundColor: 'background: #ef4040',
+            backgroundColor: '#ef4040',
             transitionIn: 'bounceInLeft',
             position: 'topRight',
             closeOnClick: true,
@@ -19,6 +25,33 @@ document.querySelector('.input-list').addEventListener('submit', event => {
         });
         return;
     }
-    box.innerHTML = '<p>Wait, the image is loaded</p><span class = "loader"></span>'
-    getImage(input);
-})
+    currentPage = 1;
+    loadMoreBtn.classList.add('hidden');
+    await getImage(currentQuery, true)
+});
+
+loadMoreBtn.addEventListener('click', async() => {
+    currentPage +=1;
+    await getImage(currentQuery, false);
+});
+    
+// document.querySelector('.input-list').addEventListener('submit', event => {
+//     const input = document.querySelector('.input').value.trim();
+//     const box = document.querySelector('.gallery');
+//     event.preventDefault();
+
+//     if(!input) {
+//         iziToast.show({
+//             messageColor: "#fafafb",
+//             messageSize: '16px',
+//             backgroundColor: 'background: #ef4040',
+//             transitionIn: 'bounceInLeft',
+//             position: 'topRight',
+//             closeOnClick: true,
+//             message: 'Please enter the search query',
+//         });
+//         return;
+//     }
+//     box.innerHTML = '<p>Wait, the image is loaded</p><span class = "loader"></span>'
+//     getImage(input);
+// })

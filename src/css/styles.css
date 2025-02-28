@@ -150,4 +150,25 @@ border-right: 1px solid #808080;
       100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
   }
 
+.load-more {
+    display: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    background: #4e75ff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 250ms;
+    margin: 0 auto;
+    display: block;
+}
 
+.load-more:hover {
+    background: #6c8cff;
+}
