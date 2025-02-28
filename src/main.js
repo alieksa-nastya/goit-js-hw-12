@@ -9,6 +9,8 @@ const inputField = document.querySelector(".input");
 let currentQuery = '';
 let currentPage = 1;
 
+loadMoreBtn.classList.add('hidden');
+
 form.addEventListener('submit', async(event) => {
     event.preventDefault();
 
