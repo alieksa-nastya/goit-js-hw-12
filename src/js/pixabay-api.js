@@ -4,6 +4,7 @@ const API_KEY = "49001064-c7b72e374a4ae6399075933f6";
 const BASE_URL = "https://pixabay.com/api/";
 
 export let currentPage = 1; 
+export let totalPages = 1;
 
 export function resetPage() {
     currentPage = 1;  
@@ -22,6 +23,7 @@ export async function fetchImages(query) {
 
     try {
         const response = await axios.get(BASE_URL, { params });
+        totalPages = Math.ceil(response.data.totalHits / 40);
         currentPage += 1; 
         return response.data;
     } catch (error) {
