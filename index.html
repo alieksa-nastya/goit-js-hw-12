@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework 11</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
   <script type="module" crossorigin src="/goit-js-hw-12/index.js"></script>
   <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-D9tHNiur.js">
   <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/vendor-DumFYO8Z.css">
-  <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/index-PTkwDNWG.css">
+  <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/index-Du1tm6yz.css">
+</head>
+<body>
+    <form id="search-form">
+        <input type="text" id="search-input" placeholder="Search images...">
+        <button id="search-button" type="submit">Search</button>
+    </form>
+
+    <main>
+        <ul id="gallery"></ul>
+        
+    </main>
+    
+<footer>
+    <button id="load-more" class="hidden">Load more</button>
+    <div class="loader hidden"></div>
+</footer>
+
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 11</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <form class="input-list">
@@ -16,6 +45,12 @@
     </form>
 
     <ul class="gallery"></ul>
-    <button class="load-more hidden">Load more</button>
+
+    <div class="loader-container hidden">
+        <span class="loader"></span>
+    </div>
+
+    <button type="button" class="load-more hidden">Load more</button>
+    <script type="module" src="./main.js"></script>
 </body>
-</html>
+</html> -->
